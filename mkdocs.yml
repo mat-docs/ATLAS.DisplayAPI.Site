@@ -1,7 +1,7 @@
 site_name: 'ATLAS Custom Display Guide'
 site_description: 'F1-grade engineering telemetry visualizations'
 docs_dir: 'docs'
-repo_url: https://github.com/StevenMorganMcLaren/DisplayAPI.Site.git
+repo_url: https://github.com/mat-docs/ATLAS.DisplayAPI.Site.git
 
 nav:
   - Home:
