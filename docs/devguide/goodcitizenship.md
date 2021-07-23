@@ -1,0 +1,24 @@
+A custom display should be written to look, behave and act just like the standard displays shipped with ATLAS.
+
+!!! attention
+
+    As custom displays are executed directly within ATLAS, an improperly written custom display has the potential to affect ATLAS reliability and performance
+
+In order to be a good citizen within the ATLAS ecosystem, a custom display should:
+
+- Follow [MVVM](../../overview/mvvm.md)
+- Not use unsupported [private APIs](../../overview/index.md#direct-use-of-platform-and-presentation-apis) whenever possible
+- Not do processing on the UI thread
+    - Use `SynchronizationContext` instead
+- Throttle data requests
+    - Do not overlap requests
+    - Do not just respond to raised events (choose an appropriate refresh rate)
+- Obey `CanRetrieveData`
+    - Handle appropriate events to ensure display is kept up to date
+        - As explained in [Data requests guidelines](./data.md#data-request-guidelines)
+
+!!! tip
+
+    The [Samples Support Library](../tutorials/samplessupportlibrary.md) demonstrates how to make a custom display a good citizen
+
+    Using the provided _View Model_ base classes in your own custom displays will help to ensure you follow these guidelines
