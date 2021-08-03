@@ -1,12 +1,16 @@
 # Introduction to the ATLAS Display API
 
-The ATLAS _Display API_ allows you to create custom displays that can provide user specific visualizations of ATLAS Session Data.
+ATLAS ships with a range of standard displays such as: Waveform, Scatterplot and Numeric to name a few.
+
+In addition to standard displays, ATLAS is fully customizable, allowing custom displays to be added via plugins created using the ATLAS [Display API](introduction/features.md).
+
+Using the Display API, custom displays can be made to look, behave and act just like the standard displays with full access to session and parameter data for custom visualizations tailored to specific third party needs.
 
 ## Plugins
 
 ATLAS is a modular platform, the ATLAS application executable provides a user interface shell whereby the majority of functionality is provided by plugins.
 
-There are essentially three types of plugin:
+There are essentially three types of plugin
 
 - Display Plugins, such as: Waveform, Scatterplot, Numeric
 - Functionality Plugins, such as: Session Browser, Parameter Browser, Alarms
@@ -22,9 +26,11 @@ At startup, ATLAS will dynamically load compatible plugins that reside within th
 
 All ATLAS functionality is built on top of the ATLAS Platform and Presentation APIs. These APIs should be seen as "internal/private APIs" that are actively developed and changed between each ATLAS release.
 
-All Data access is through the SQL Race API.
-
 The Display API is a thin wrapper over these internal APIs, providing a stable and versioned API for third parties to develop custom display plugins. Changes to the Display API is purely additive, meaning custom display plugins remain compatible with future releases of ATLAS.
+
+!!! note
+
+    All data access is through the SQL Race API.
 
 ### Direct use of Platform and Presentation APIs
 
@@ -36,12 +42,12 @@ The Display API is a thin wrapper over these internal APIs, providing a stable a
 
     However, as ATLAS continues to be developed, we reserve the right to change the internal APIs as we see fit without regard for backwards compatibility, There is a high chance that future releases of ATLAS will become incompatible with custom display plugins that use internal APIs, with the most likely consequence being crashes on startup.
 
-    Before calling internals APIs, please contact McLaren Applied for advice, where alternative APIs may be recommended, or future enhancements to the Display API will be considered.
+    Before calling internal APIs, please contact McLaren Applied for advice, whereby alternative APIs may be recommended, or future enhancements to the Display API will be considered.
 
 ## Display API deployment
 
 The Display API is deployed as a NuGet package hosted on GitHub, see [https://github.com/mat-docs/packages](https://github.com/mat-docs/packages)
 
-The NuGet packages contains the following:
+The NuGet packages contains the following
 
 ![NuGet Contents](assets/images/introduction/package.png)

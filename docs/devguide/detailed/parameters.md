@@ -5,23 +5,23 @@ By default, display parameters cannot be added to the display.
 - Decorate the _View Model_ class with the `[DisplayPluginSettings(ParametersMaxCount=n)]` attribute to set an appropriate maximum number of display parameters allowed 
     - 100 is the recommended maximum
 
-Display parameters can be configured by:
+Display parameters can be configured by
 
 - The _user_ with the _Parameter Browser_	
 - Programmatically via `IDisplayParameterService`
 
 Each display parameter consists of a _parameter container_ with a _parameter_ per composite session.
 
-Override the following `DisplayPluginViewModel` notifications as appropriate:
+Override the following `DisplayPluginViewModel` notifications as appropriate
 
 - `OnParameterContainerAdded()`
     - Called when parameter is first added.
 - `OnParameterContainerRemoved()`
     - Called when parameter is removed
 - `OnParameterAdded()`
-    - Called for each _composite session_
+    - Called for each _composite session_ when a parameter is added
 - `OnParameterRemoved()`
-    - Called for each _composite session_
+    - Called for each _composite session_ when a parameter is removed
 
 !!! note
 
@@ -35,7 +35,7 @@ Override the following `DisplayPluginViewModel` notifications as appropriate:
 
 ## Display Parameter Service
 
-The `IDisplayParameterService` is used to access and manipulate display parameters:
+The `IDisplayParameterService` is used to access and manipulate display parameters
 
 - `ParameterContainers` collection property
     - One per display parameter

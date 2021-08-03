@@ -8,7 +8,7 @@ Most standard displays are based on either _timebase_ or _cursor_.
 
 A notable exception is the _Summary_ display that is based on laps. 
 
-The _Waveform_ display uses both _timebase_ and _cursor_ and responds as they change. Interacting with the _Waveform_ display actually changes the value of _timebase_ and/or _cursor_. 
+The _Waveform_ display uses both _timebase_ and _cursor_ and responds as they change. Interacting with the _Waveform_ display changes the value of _timebase_ and/or _cursor_. 
 
 !!! hint
 
@@ -16,7 +16,7 @@ The _Waveform_ display uses both _timebase_ and _cursor_ and responds as they ch
 
 ## Timebase and Cursor timestamps
 
-To access the primary session timebase range and/or cursor:
+To access the primary session timebase range and/or cursor
 
 - Get the F1 timeline extent for the primary session from `ActiveCompositeSessionContainer.CompositeSessions.First(cs => cs.IsPrimary).TimebaseRange`
 - Get the cursor timestamp for the primary session from `ActiveCompositeSessionContainer.First(cs => cs.IsPrimary).CursorPoint`
@@ -33,13 +33,13 @@ To access the primary session timebase range and/or cursor:
 
     A timestamp is the number of nanoseconds since midnight.
 
-    A timestamp can be converted to a `TimeSpan` via:
+    A timestamp can be converted to a `TimeSpan` via
 
     ```c#
     var timespan = TimeSpan.FromTicks(timestamp / 100);
     ```
 
-The following `DisplayPluginViewModel` overrides are called whenever the timebase or cursor changes for a _composite session_:
+The following `DisplayPluginViewModel` overrides are called whenever the timebase or cursor changes for a _composite session_
 
 - `OnCursorDataPointChanged(ICompositeSession)`
     - New timestamp value is obtained from `ICompositeSession.CursorPoint`
@@ -48,7 +48,7 @@ The following `DisplayPluginViewModel` overrides are called whenever the timebas
 
 ## Cursor Service
 
-Programmatic setting of the the cursor for the active session: 
+Programmatic setting of the the cursor for the active session 
 
 - `ISessionCursorService`
     - Use `MoveCursor()` to change the timestamp of the cursor
