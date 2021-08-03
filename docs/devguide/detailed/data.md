@@ -1,5 +1,3 @@
-<object type="image/svg+xml" data="/assets/diagrams/devguide/DataRequestLifetime.svg" class="diagram" title="Lifetime of a data request"></object>
-
 ## Making Data Requests
 
 The following services are required to retrieve parameter data:
@@ -17,7 +15,6 @@ The following services are required to retrieve parameter data:
         // Use now, or store for use later...
     }
     ```
-
 
 A _data request_ is made via a data request signal (obtained from `IDataRequestSignalFactory`).
 
@@ -47,6 +44,10 @@ The result is asynchronously sent back via the _signal bus_ and therefore an app
 !!! attention
 
     The signal handler is ran by default on the Task pool, dispatch to the UI as appropriate via `SynchronizationContext`
+
+### Data Request and Reply Sequence
+
+<object type="image/svg+xml" data="../../assets/diagrams/devguide/DataRequestLifetime.svg" class="diagram" title="Lifetime of a data request"></object>
 
 ## Data Request Properties
 
@@ -140,9 +141,9 @@ Values retrieved by SQL Race are passed back in a `ParameterValues` instance:
 
 !!! attention
 
-   Due to the use of array pooling, the length of the arrays may be greater then the retrieved data quantity:
+    Due to the use of array pooling, the length of the arrays may be greater then the retrieved data quantity:
 
-   Always refer to _SampleCount_ and not array length
+    Always refer to _SampleCount_ and not array length
 
 ## Data request guidelines
 

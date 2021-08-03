@@ -18,7 +18,7 @@ At startup, ATLAS will dynamically load compatible plugins that reside within th
 
 ## Architecture Overview
 
-![Architecture](/assets/images/overview/architecture.png)
+![Architecture](../assets/images/overview/architecture.png)
 
 All ATLAS functionality is built on top of the ATLAS Platform and Presentation APIs. These APIs should be seen as "internal/private APIs" that are actively developed and changed between each ATLAS release.
 
@@ -44,6 +44,6 @@ The Display API is deployed as a NuGet package hosted on GitHub, see [https://gi
 
 The NuGet packages contains the following:
 
-![NuGet Contents](/assets/images/overview/package.png)
+![NuGet Contents](../assets/images/overview/package.png)
 
 The contents are further explained here: [Developer Guide](../devguide/index.md){ .md-button .md-button--primary }

@@ -17,4 +17,4 @@ The Display API currently has the following limitations:
 
 !!! tip
 
-    Some of these limitations (especially around flow control) are overcome within the _View Model_ base classes provided by the [Samples Support Library](./tutorials/samplessupportlibrary.md) 
+    Some of these limitations (especially around flow control) are overcome within the _View Model_ base classes provided by the [Samples Support Library](tutorials/samplessupportlibrary.md) 

@@ -15,7 +15,7 @@ In order to be a good citizen within the ATLAS ecosystem, a custom display shoul
     - Do not just respond to raised events (choose an appropriate refresh rate)
 - Obey `CanRetrieveData`
     - Handle appropriate events to ensure display is kept up to date
-        - As explained in [Data requests guidelines](./data.md#data-request-guidelines)
+        - As explained in [Data requests guidelines](data.md#data-request-guidelines)
 
 !!! tip
 

@@ -8,23 +8,23 @@ Custom displays should respond appropriately when Sessions are loaded/unloaded.
 
 Each _Set_ is represented by a _composite session container_:
 
-![Set](/assets/images/devguide/sets.png)
+![Set](../../assets/images/devguide/sets.png)
 
 A _Set_ is associated with a _display_:
 
-![Associated Set](/assets/images/devguide/associateset.png)
+![Associated Set](../../assets/images/devguide/associateset.png)
 
 A _composite session container_ contains zero or more _composite sessions_.
 
 When there is more than one _composite session_ that constitutes a _compare set_ (_overlay_):
 
-![Overlay Set](/assets/images/devguide/overlayset.png)
+![Overlay Set](../../assets/images/devguide/overlayset.png)
 
 A _composite session_ contains one or more _sessions_.
 
 When there is more than one _session_ they can either be appended or overlaid:
 
-![Append Set](/assets/images/devguide/appendset.png)
+![Append Set](../../assets/images/devguide/appendset.png)
 
 !!! note
 

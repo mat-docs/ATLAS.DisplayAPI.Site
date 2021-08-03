@@ -15,8 +15,8 @@ nav:
   - Developer Guide:
     - Overview: devguide/index.md
     - Tutorials:
-      - Create Display from Scratch: devguide/tutorials/createfromscratch.md
       - Prerequisites: devguide/tutorials/prerequisites.md
+      - Create Custom Display from Scratch: devguide/tutorials/createfromscratch.md
       - Samples Support Library: devguide/tutorials/samplessupportlibrary.md
     - Enhancing Displays:
       - Factories and Services: devguide/detailed/factoriesandservices.md
