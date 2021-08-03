@@ -1,40 +1,18 @@
-site_name: 'ATLAS Custom Display Guide'
-site_description: 'F1-grade engineering telemetry visualizations'
+site_name: 'ATLAS Display API Developer Guide'
+site_description: 'Creating custom displays for McLaren ATLAS'
 docs_dir: 'docs'
-repo_url: https://github.com/mat-docs/ATLAS.DisplayAPI.Site.git
-
-nav:
-  - Home:
-    - ATLAS 10: index.md
-    - Features: home/features.md
-    - Prerequisites: home/prerequisites.md
-  - Display API Overview:
-    - Introduction: overview/index.md
-    - Further Information:
-        - Model-View-ViewModel: overview/mvvm.md
-  - Developer Guide:
-    - Overview: devguide/index.md
-    - Tutorials:
-      - Prerequisites: devguide/tutorials/prerequisites.md
-      - Create Custom Display from Scratch: devguide/tutorials/createfromscratch.md
-      - Samples Support Library: devguide/tutorials/samplessupportlibrary.md
-    - Enhancing Displays:
-      - Factories and Services: devguide/detailed/factoriesandservices.md
-      - Initialization, state and notifications: devguide/detailed/initialization.md
-      - Working with Display Properties: devguide/detailed/displayprops.md
-      - Working with Sessions: devguide/detailed/sessions.md
-      - Working with Timebase and Cursor: devguide/detailed/timebasecursor.md
-      - Working with Display Parameters: devguide/detailed/parameters.md
-      - Working with Data: devguide/detailed/data.md
-      - Good Citizenship: devguide/detailed/goodcitizenship.md
-    - Further Information:
-        - Core API: devguide/coreapi.md
-        - API Limitations: devguide/limitations.md
-  - API Reference: "https://mat-docs.github.io/Atlas.DisplayAPI.Documentation/index.html"
+repo_url: https://github.com/mat-docs/ATLAS.DisplayAPI.Site
+site_url: https://docs.atlas.mclarenapplied.com/developer/atlas-displayapi/
 
 theme:
   name: 'material'
+  palette:
+    primary:  'black'
+    accent:   'indigo'
   custom_dir: overrides
+  # assets/swoosh is cached aggressively - rename if icons change
+  favicon:    'assets/swoosh/favicon.png'
+  logo:       'assets/swoosh/logo.png'
   icon:
     repo: fontawesome/brands/github
   features:
@@ -42,6 +20,32 @@ theme:
     - toc.integrate
 
 copyright: Copyright &copy; 2021 McLaren Applied Ltd.
+
+nav:
+  - ⇱ Docs Portal: https://mclaren-atlas-docs.netlify.app/
+  - Introduction:
+    - Overview: index.md
+    - Further Information:
+        - MVVM: introduction/mvvm.md
+  - Developer Guide:
+    - Overview: devguide/index.md
+    - Tutorials:
+      - devguide/tutorials/prerequisites.md
+      - devguide/tutorials/createfromscratch.md
+      - devguide/tutorials/samplessupportlibrary.md
+    - Enhancing Displays:
+      - devguide/detailed/factoriesandservices.md
+      - devguide/detailed/initialization.md
+      - devguide/detailed/displayprops.md
+      - devguide/detailed/sessions.md
+      - devguide/detailed/timebasecursor.md
+      - devguide/detailed/parameters.md
+      - devguide/detailed/data.md
+      - devguide/detailed/goodcitizenship.md
+    - Further Information:
+        - devguide/coreapi.md
+        - devguide/limitations.md
+  - API Reference: "https://mat-docs.github.io/Atlas.DisplayAPI.Documentation/index.html"
 
 markdown_extensions:
   - abbr

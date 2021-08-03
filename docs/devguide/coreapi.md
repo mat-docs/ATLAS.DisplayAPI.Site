@@ -1,3 +1,5 @@
+# Core API
+
 The display API shares some core functionality with ATLAS internal APIs:
 
 - `SignalBus`

@@ -1,3 +1,5 @@
+# Working with Timebase and Cursor
+
 The _timebase_ is the currently visible timestamp range that determines the extent of parameter values displayed by various standard displays such as _Waveform_, _Scatterplot_, _Histogram_ etc.
 
 The _cursor_ is the currently selected timestamp and determines the parameter values displayed by various standard displays such as _Numeric_, _Bit_, _Circuit_ etc.

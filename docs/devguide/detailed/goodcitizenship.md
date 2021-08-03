@@ -1,3 +1,5 @@
+# Good Citizenship
+
 A custom display should be written to look, behave and act just like the standard displays shipped with ATLAS.
 
 !!! attention
@@ -6,8 +8,8 @@ A custom display should be written to look, behave and act just like the standar
 
 In order to be a good citizen within the ATLAS ecosystem, a custom display should:
 
-- Follow [MVVM](../../overview/mvvm.md)
-- Not use unsupported [private APIs](../../overview/index.md#direct-use-of-platform-and-presentation-apis) whenever possible
+- Follow [MVVM](../../introduction/mvvm.md)
+- Not use unsupported [private APIs](../../index.md#direct-use-of-platform-and-presentation-apis) whenever possible
 - Not do processing on the UI thread
     - Use `SynchronizationContext` instead
 - Throttle data requests

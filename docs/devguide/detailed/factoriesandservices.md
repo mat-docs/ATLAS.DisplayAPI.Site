@@ -1,3 +1,5 @@
+# Factories and Services
+
 The following are the factories and services provided by the Display API:
 
 - `ISignalBus`

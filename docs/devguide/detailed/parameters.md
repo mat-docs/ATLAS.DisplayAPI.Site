@@ -1,3 +1,5 @@
+# Working with Display Parameters
+
 By default, display parameters cannot be added to the display.
 
 - Decorate the _View Model_ class with the `[DisplayPluginSettings(ParametersMaxCount=n)]` attribute to set an appropriate maximum number of display parameters allowed 

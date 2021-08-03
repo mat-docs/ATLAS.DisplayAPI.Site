@@ -1,3 +1,5 @@
+# Working with Display Properties
+
 Display properties can be edited within the properties window and/or persisted to the workbook.
 
 ## Adding a display property to the View Model

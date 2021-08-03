@@ -1,3 +1,5 @@
+# Initialization, state and notifications
+
 The following methods and properties of _DisplayPluginViewModel_ provide display initialization, state and notifications:
 
 - Display initialization:
