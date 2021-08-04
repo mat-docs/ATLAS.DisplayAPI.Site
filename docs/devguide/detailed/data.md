@@ -156,7 +156,7 @@ Values retrieved by SQL Race are passed back in a `ParameterValues` instance:
     - Sessions loaded/unloaded
         - Override `OnCompositeSessionLoaded()` and `OnCompositeSessionUnLoaded()`
     - Session association changes
-        - Override `OnParameterAdded()` and `OnCompositeSessionContainerChanged()`
+        - Override `OnCompositeSessionContainerChanged()`
     - Copy/Paste displays
         - Override `OnInitialised()`
     - Parameters added/removed

@@ -4,13 +4,13 @@ Before completing these tutorials, you'll need a few things.
 
 ## Development Environment
 
-- [Visual Studio 2019 later](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) with the **.NET Desktop development** workload installed.  
+- [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) with the **.NET Desktop development** workload installed.  
 
 ## GitHub Account
 
 These tutorials use some packages hosted on [GitHub](https://github.com/mat-docs/packages).
 
-You'll need a free account to access these.
+You'll need a free account to access them.
 
 ## Code Samples
 

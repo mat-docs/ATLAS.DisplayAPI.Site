@@ -106,7 +106,7 @@ Ensure _Build Action_ is set to _Resource_:
 
 ![Resources Folder](../../assets/images/devguide/tutorials/iconproperties.png)
 
-## Configure _View) class
+## Configure _View_ class
 
 The _View_ provides the custom visualization presentation. 
 
@@ -161,7 +161,7 @@ Add _New Item_ to project:
 
 ![Add New Item](../../assets/images/devguide/tutorials/addnewitem.png)
 
-Add a _Class_ named _SampleDisplayViewModel_to project:
+Add a _Class_ named _SampleDisplayViewModel_ to project:
 
 ![Add Class](../../assets/images/devguide/tutorials/addviewmodelclass.png)
 
@@ -188,7 +188,7 @@ namespace SampleDisplayPlugin
 
 The _Plugin_ class registers the _View_ class, _ViewModel_ class and _Icon_ location with ATLAS.
 
-- Create a class named _Plugin_ as per [View Model class](#add-viewmodel-class)
+- Create a class named _Plugin_ as per [View Model class](#add-view-model-class)
     - Derive from _DisplayPlugin<Plugin>_
 - Decorate class with _DisplayPlugin_ attribute
     - Set appropriate values for: _View_, _ViewModel_ and _IconUrl_ properties
@@ -212,7 +212,7 @@ namespace SampleDisplayPlugin
 
 The _PluginModule_ class provides the entry point for ATLAS to initialise the custom display plugin.
 
-- Create a class named _PluginModule_ as per [View Model class](#add-viewmodel-class)
+- Create a class named _PluginModule_ as per [View Model class](#add-view-model-class)
     - Derive from _Module_ (provided by _Autofac_)
 - Decorate class with _Export_ attribute (provided by _MEF_)
     - Add a reference to _System.ComponentModel.Composition_ as required

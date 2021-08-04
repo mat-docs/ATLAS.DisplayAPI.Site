@@ -17,7 +17,7 @@ The following are the factories and services provided by the Display API:
 
 !!! note
 
-    These factories (except `IDisplayParameterService`) are registered with _Autofac_ (_IoC container_)
+    These factories and services (except `IDisplayParameterService`) are registered with _Autofac_ (_IoC container_)
 
     To obtain an instance of a service, inject as a parameter into the _View Model_ constructor 
 
