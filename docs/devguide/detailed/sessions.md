@@ -1,3 +1,5 @@
+# Working with Sessions
+
 A _Session_ is a collection of data samples obtained from a data source.
 
 Multiple _Sessions_ may be loaded at one time and grouped into _Sets_.

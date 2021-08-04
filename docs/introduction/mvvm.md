@@ -1,6 +1,8 @@
+# Model-View-ViewModel (MVVM)
+
 MVVM is a popular software architecture pattern commonly used with WPF applications:
 
-![MVVM](../assets/images/overview/mvvm.png)
+![MVVM](../assets/images/introduction/mvvm.png)
 
 - _Model-View-ViewModel_ pattern
     - _2 way binding_

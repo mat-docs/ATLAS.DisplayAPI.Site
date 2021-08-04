@@ -1,3 +1,5 @@
+# API Limitations
+
 The Display API currently has the following limitations:
 
 - Missing events
