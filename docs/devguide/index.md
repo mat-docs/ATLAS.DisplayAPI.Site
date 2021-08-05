@@ -10,18 +10,18 @@ This section is a detailed guide to the [Display API](https://mat-docs.github.io
 
 The Display API is used by third parties to create custom display visualizations.
 
-Custom displays are written in _C#_ using _WPF_ with _MVVM_, see [Required Knowledge](..\introduction\prerequisites.md#required-knowledge)
+Custom displays are written in _C#_ using _WPF_ with _MVVM_, see [Required Knowledge](../introduction/prerequisites.md#required-knowledge)
 
 The Display API is published as a [NuGet](https://github.com/mat-docs/packages) package on GitHub.
 
 ## Tutorials
 
-A number of tutorials are provided to help explain and demonstrate the common [features](..\introduction\features.md) of the Display API
+A number of tutorials are provided to help explain and demonstrate the common [features](../introduction/features.md) of the Display API
 
-- Creating a plugin for a minimal custom display from scratch, see [Tutorial 1](tutorials\createfromscratch.md)
-- Diagnostic display to further explore Display API features, see [Tutorial 2](tutorials\diagnostic.md)
-- Numeric display that supports compare mode, see [Tutorial 3](tutorials\numericcompare.md)
-- Graphical display that demonstrates richer more real world visualizations, see [Tutorial 4](tutorials\graphical.md)
+- Creating a plugin for a minimal custom display from scratch, see [Tutorial 1](tutorials/createfromscratch.md)
+- Diagnostic display to further explore Display API features, see [Tutorial 2](tutorials/diagnostic.md)
+- Numeric display that supports compare mode, see [Tutorial 3](tutorials/numericcompare.md)
+- Graphical display that demonstrates richer, more real world visualizations, see [Tutorial 4](tutorials/graphical.md)
 
 ### Tutorials Setup
 
@@ -37,9 +37,9 @@ These tutorials use packages and code hosted on [GitHub](https://github.com/mat-
 
 #### Development Environment
 
-- [Visual Studio](..\introduction\prerequisites.md#visual-studio) installed
-- [Access to Display API NuGet package](..\introduction\prerequisites.md#display-api-nuget-package)
-- [ATLAS](..\introduction\prerequisites.md#atlas) installed
+- [Visual Studio](../introduction/prerequisites.md#visual-studio) installed
+- [Access to Display API NuGet package](../introduction/prerequisites.md#display-api-nuget-package)
+- [ATLAS](../introduction/prerequisites.md#atlas) installed
 
 #### Code Samples
 

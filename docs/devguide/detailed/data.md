@@ -45,7 +45,9 @@ The result is asynchronously sent back via the _signal bus_ and therefore an app
 
 !!! attention
 
-    The signal handler is ran by default on the Task pool, if modifying the UI, dispatch to the UI thread as appropriate via `SynchronizationContext`
+    The signal handler is ran by default on the Task pool.
+
+    If modifying the UI, dispatch to the UI thread as appropriate via `SynchronizationContext`.
 
 ### Data Request and Results Reply Sequence
 

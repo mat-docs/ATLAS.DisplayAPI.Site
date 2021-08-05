@@ -18,7 +18,7 @@ The following methods and properties of _DisplayPluginViewModel_ provide display
         - Unique identity of display (mainly used to associate results of a data request to a display)
 - Display change notifications
     - `OnActiveDisplayPageChanged(bool isActive)`
-        - Called whenever page is switched (`isActive` is true when activated page contains the display)
+        - Called whenever page is switched (`isActive` is true when the active page contains the display)
     - `OnCanRenderDisplayChanged(bool canRender)`
         - Called whenever display visibility changes (`canRender` is true when display is visible)
 

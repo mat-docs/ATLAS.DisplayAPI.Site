@@ -2,9 +2,9 @@
 
 ## Visual Studio
 
-- [Visual Studio 2019 or later](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) with the **.NET desktop development** workload installed
+- [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) with the **.NET desktop development** workload installed
 
-![Visual Studio Installer](..\assets\images\introduction\visualstudioinstaller.png)
+![Visual Studio Installer](../assets/images/introduction/visualstudioinstaller.png)
 
 ## Display API NuGet package
 
@@ -21,5 +21,5 @@
 - WPF
     - [Windows Presentation Foundation](https://docs.microsoft.com/en-us/visualstudio/designers/getting-started-with-wpf) is the User Interface technology used by ATLAS and therefore custom displays should also be implemented in WPF
 - MVVM
-    -  [MVVM](mvvm.md) has used extensively in ATLAS and therefore the Display API has been designed to be fully MVVM compliant
+    -  [MVVM](mvvm.md) has been used extensively in ATLAS and therefore the Display API has been designed to be fully MVVM compliant
 
