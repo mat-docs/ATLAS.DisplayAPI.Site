@@ -16,12 +16,13 @@ The Display API is published as a [NuGet](https://github.com/mat-docs/packages) 
 
 ## Tutorials
 
-A number of tutorials are provided to help explain and demonstrate the common [features](../introduction/features.md) of the Display API
+A number of tutorials are provided to help explain and demonstrate the [features](../introduction/features.md) of the Display API
 
-- Creating a plugin for a minimal custom display from scratch, see [Tutorial 1](tutorials/createfromscratch.md)
-- Diagnostic display to further explore Display API features, see [Tutorial 2](tutorials/diagnostic.md)
+- Creating a plugin for a custom display from scratch, see [Tutorial 1](tutorials/createfromscratch.md)
+- Diagnostic display to explore Display API features, see [Tutorial 2](tutorials/diagnostic.md)
 - Numeric display that supports compare mode, see [Tutorial 3](tutorials/numericcompare.md)
 - Graphical display that demonstrates richer, more real world visualizations, see [Tutorial 4](tutorials/graphical.md)
+- Quick to create display that visualizes parameter value changes, see [Tutorial 5](tutorials/gauge.md)
 
 ### Tutorials Setup
 

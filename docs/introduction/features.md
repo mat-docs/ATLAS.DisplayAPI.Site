@@ -15,7 +15,7 @@ Custom displays look, behave and act like standard displays.
 ## Track common actions via Events
 - Session loaded/unloaded/associated
 - Parameters added/removed
-- Timeline updated
+- Timebase updated
 - Cursor position changed
 - Page activated
 

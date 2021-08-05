@@ -27,7 +27,7 @@ To access the primary session timebase range and/or cursor
 
 !!! attention
 
-    Do not confuse `TimeRange` (extent of session) and `TimebaseRange` (extent of F1 timeline) properties.
+    Do not confuse `TimeRange` (extent of session) and `TimebaseRange` (extent of F1 timeline selection) properties.
 
 !!! note
 

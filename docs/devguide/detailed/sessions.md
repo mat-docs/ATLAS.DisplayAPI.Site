@@ -4,7 +4,7 @@ A _Session_ is a collection of data samples obtained from a data source.
 
 Multiple _Sessions_ may be loaded at one time and grouped into _Sets_.
 
-Custom displays should respond appropriately when Sessions are loaded/unloaded.
+Custom displays should respond appropriately when _Sessions_ are loaded/unloaded.
 
 ## Sessions Object Model
 

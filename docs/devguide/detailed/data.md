@@ -41,7 +41,7 @@ The result is asynchronously sent back via the _signal bus_ and therefore an app
 
 !!! warning
 
-    Remember to match the `SourceId` property of result signal, not `SignalId` property
+    Remember to match the `SourceId` property of result signal, not `SignalId` property.
 
 !!! attention
 

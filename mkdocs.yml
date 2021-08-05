@@ -37,6 +37,7 @@ nav:
       - devguide/tutorials/diagnostic.md
       - devguide/tutorials/numericcompare.md
       - devguide/tutorials/graphical.md
+      - devguide/tutorials/gauge.md
       - devguide/tutorials/deploymentscript.md
       - devguide/tutorials/displaypluginlibrary.md
     - Enhancing Displays:
