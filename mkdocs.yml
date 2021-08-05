@@ -8,7 +8,7 @@ site_url: https://docs.atlas.mclarenapplied.com/developer/atlas-displayapi/
 theme:
   name: 'material'
   palette:
-    primary:  'black'
+    primary:  'blue'
     accent:   'indigo'
   custom_dir: overrides
   # assets/swoosh is cached aggressively - rename if icons change
