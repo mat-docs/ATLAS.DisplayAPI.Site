@@ -1,19 +1,19 @@
 # Model-View-ViewModel (MVVM)
 
-MVVM is a popular software architecture pattern commonly used with WPF applications:
+[MVVM](https://docs.microsoft.com/en-us/archive/msdn-magazine/2009/february/patterns-wpf-apps-with-the-model-view-viewmodel-design-pattern) is a popular software architecture pattern commonly used with WPF applications
 
 ![MVVM](../assets/images/introduction/mvvm.png)
 
 - _Model-View-ViewModel_ pattern
     - _2 way binding_
-        - `DataContext` _View_ property should be assigned an implementation of the _View Model_
-        - `“{Binding …}”` _XAML_ element link a _View_ property to _View Model_ property
+        -  The _View_ `DataContext` property should be assigned an implementation of the _View Model_
+        - `“{Binding …}”` _XAML_ element links a _View_ property to a _View Model_ property
     - _Change notification_
         - _View Model_ should implement the `INotifyPropertyChanged` interface
-            - `PropertyChanged` event should be raised when property value changes
+            - `PropertyChanged` event should be raised whenever a property value changes
     - _Commands_
         - _View Model_ must provide an implementation of the `ICommand` interface per _command_ 
-- Helper classes
+- Helper classes provided by the _Display API_ to implement the above
     - `BindableBase` base class
         - Implements `INotifyPropertyChanged`
         - Provides `SetProperty` methods to simplify following the pattern

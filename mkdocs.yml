@@ -27,13 +27,18 @@ nav:
   - Introduction:
     - Overview: index.md
     - Further Information:
-        - MVVM: introduction/mvvm.md
+        - introduction/prerequisites.md
+        - introduction/features.md
+        - introduction/mvvm.md
   - Developer Guide:
     - Overview: devguide/index.md
     - Tutorials:
-      - devguide/tutorials/prerequisites.md
       - devguide/tutorials/createfromscratch.md
-      - devguide/tutorials/samplessupportlibrary.md
+      - devguide/tutorials/diagnostic.md
+      - devguide/tutorials/numericcompare.md
+      - devguide/tutorials/graphical.md
+      - devguide/tutorials/deploymentscript.md
+      - devguide/tutorials/displaypluginlibrary.md
     - Enhancing Displays:
       - devguide/detailed/factoriesandservices.md
       - devguide/detailed/initialization.md

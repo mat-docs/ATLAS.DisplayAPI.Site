@@ -2,14 +2,14 @@
 
 ## Making Data Requests
 
-The following services are required to retrieve parameter data:
+The following services are required to retrieve parameter data
 
-- ISignalBus
-- IDataRequestSignalFactory
+- `ISignalBus`
+- `IDataRequestSignalFactory`
 
 !!! hint
 
-    These services are obtained from Autofac by injecting into the _View Model_ constructor as parameters, e.g.
+    These services are obtained from _Autofac_ by injecting into the _View Model_ constructor as parameters, e.g.
 
     ```c#
     public ViewModelConstructor(ISignalBus signalBus, IDataRequestSignalFactory dataRequestSignalFactory)
@@ -45,32 +45,34 @@ The result is asynchronously sent back via the _signal bus_ and therefore an app
 
 !!! attention
 
-    The signal handler is ran by default on the Task pool, dispatch to the UI as appropriate via `SynchronizationContext`
+    The signal handler is ran by default on the Task pool.
 
-### Data Request and Reply Sequence
+    If modifying the UI, dispatch to the UI thread as appropriate via `SynchronizationContext`.
 
-<object type="image/svg+xml" data="../../assets/diagrams/devguide/DataRequestLifetime.svg" class="diagram" title="Lifetime of a data request"></object>
+### Data Request and Results Reply Sequence
+
+<object type="image/svg+xml" data="../../../assets/diagrams/devguide/DataRequestLifetime.svg" class="diagram" title="Lifetime of a data request"></object>
 
 ## Data Request Properties
 
-- _Data_ vs _Samples_ requests:
+- _Data_ vs _Samples_ requests
     - Requests for _Samples_ retrieve the actual stored values
     - Requests for _Data_ retrieve stored values re-sampled at a specified interval
-- _Single_ vs _Composite_ session requests:
+- _Single_ vs _Composite_ session requests
     - _Single_ session requests return results for a single _composite session_
     - _Composite_ session requests return results for all _composite sessions_ within a _composite session container_ (primary and secondary) 
-- Request properties:
+- Request properties
     - _Source Id_/_Request Id_
         - Used to match a _result_ to a _request_ as explained above.
     - _Composite Session key_ (or _Container Session Container key_ for _composite_ requests)
-        - Usually obtained from `ActiveCompositeSessionContainer` or from parameters passed to notification methods
+        - Usually obtained from `ActiveCompositeSessionContainer` or from arguments passed to notification methods
     - _Parameter_ (or _Parameter Container_ for _composite_ requests)
-    - _Extent_ of data request:
-        - Requests for _Samples_:
-            - _Start Time_ and _Sample Count_
+    - _Extent_ of data request
+        - Requests for _Samples_
+            - _Start Time_ and _Sample Count_, or
             - _Time Range_ 
-        - Requests for _Data_:
-        -   _Time Range_ and _Sample Count_ (_interval_ is calculated)
+        - Requests for _Data_
+            - _Time Range_ and _Sample Count_ (_interval_ is calculated)
     - _Sample Direction_
         - Retrieve forwards (_Next_) or backwards (_Previous_) through the stored values
     - _Sample Mode_ (only applicable for requests for _Data_)
@@ -83,7 +85,7 @@ The result is asynchronously sent back via the _signal bus_ and therefore an app
 
 ## Data request and result signals
 
-Handle the matching result signal type for each request signal type used:
+Handle the matching result signal type for each request signal type used
 
 - `DataRequestSignal`
     - Re-sampled values for a single _composite session_
@@ -103,11 +105,11 @@ Handle the matching result signal type for each request signal type used:
 
 ## Data Results
 
-Results are accessed via the matching results signal:
+Results are accessed via the matching results signal
 
 - `IResult`
     - `ParameterValues` property, [see below](#parametervalues-properties)
-        - Result of data request obtained from SQL RACE
+        - Result of data request obtained from SQL Race
         - Remember to call `Lock()`/`Unlock()` if retaining a reference 
     - `IRequest` property (original request)
 - `ICompositeResult`
@@ -120,11 +122,11 @@ Results are accessed via the matching results signal:
 
 !!! attention
 
-    Currently data statistics requests are broken because the statistics result does not actually contain the retrieved data
+    Currently data statistics requests are broken because the statistics result does not actually expose the retrieved data
 
 ### ParameterValues properties
 
-Values retrieved by SQL Race are passed back in a `ParameterValues` instance:
+Values retrieved by SQL Race are passed back in a `ParameterValues` instance
 
 - `SampleCount`
     - Actual number of values returned from data request
@@ -143,20 +145,20 @@ Values retrieved by SQL Race are passed back in a `ParameterValues` instance:
 
 !!! attention
 
-    Due to the use of array pooling, the length of the arrays may be greater then the retrieved data quantity:
+    Due to the use of array pooling, the length of the arrays may be greater then the retrieved data quantity
 
     Always refer to _SampleCount_ and not array length
 
 ## Data request guidelines
 
 - Only attempt a data request when `CanRetrieveData` is `true`
-- Handle the following situations and make data requests to ensure the display is up to date (observing `CanRetrieveData` as per above)
+- Handle the following situations and make data requests to ensure the custom display is up to date (observing `CanRetrieveData` as per above)
     - Page switch and display visibility changes (stacked displays)
         - Override `OnCanRenderDisplayChanged()`
     - Sessions loaded/unloaded
         - Override `OnCompositeSessionLoaded()` and `OnCompositeSessionUnLoaded()`
     - Session association changes
-        - Override `OnParameterAdded()` and `OnCompositeSessionContainerChanged()`
+        - Override `OnCompositeSessionContainerChanged()`
     - Copy/Paste displays
         - Override `OnInitialised()`
     - Parameters added/removed

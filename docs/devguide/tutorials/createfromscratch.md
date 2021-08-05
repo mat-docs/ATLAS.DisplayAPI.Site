@@ -1,4 +1,14 @@
-# Create Custom Display from Scratch
+# Create Custom Display Plugin from Scratch
+
+The following steps demonstrate how to create a custom display plugin from scratch.
+
+A custom display plugin is a .Net DLL that when deployed to the ATLAS program files, is automatically loaded and registered on startup.
+
+!!! note
+
+    Currently only one custom display type is allowed per custom display plugin project.
+
+    However, any number of instances of a custom display type may be added to a workbook.
 
 ## Create Project
 
@@ -12,7 +22,7 @@ Create a new _C# WPF User Control Library (.NET Framework)_ project with Visual 
 
 !!! caution
 
-    _.NET Framework WPF_ project and not _.Net Core WPF_ project
+    Create a _.NET Framework WPF_ project and not a _.Net Core WPF_ project
 
 
 ![Name Project](../../assets/images/devguide/tutorials/nameproject.png)
@@ -27,7 +37,7 @@ Create a new _C# WPF User Control Library (.NET Framework)_ project with Visual 
 
 ## Update Assembly Information
 
-Edit project settings:
+Edit project settings
 
 ![Project Settings](../../assets/images/devguide/tutorials/editprojectsettings.png)
 
@@ -35,80 +45,79 @@ Click _Assembly Information..._
 
 ![Project Settings](../../assets/images/devguide/tutorials/projectsettings.png)
 
-Modify: Title, Description and GUID (if not already set) properties:
+Modify the Title, Description and GUID (if not already set) properties
 
 ![Project Settings](../../assets/images/devguide/tutorials/assemblyinformation.png)
 
-_Title_ property corresponds to Display Window title:
+The _Title_ property corresponds to the custom display window title
 
 ![Window Title](../../assets/images/devguide/tutorials/windowtitle.png)
 
-_Description_ property corresponds to Display Icon tooltip:
+The _Description_ property corresponds to the custom display icon tooltip
 
-![Icon Tooltip](../../assets/images/devguide/tutorials/icontooltip.png)
+![Toolbar Icon Tooltip](../../assets/images/devguide/tutorials/icontooltip.png)
 
 !!! attention
 
     A GUID must be specified otherwise ATLAS will fail to start.
 
-    Use Tools->Create GUID as necessary:
+    Use Tools->Create GUID as necessary
 
     ![Tools Create Guid](../../assets/images/devguide/tutorials/toolscreateguid.png)
 
-    Copy Registry Format:
+    Copy Registry Format
 
     ![Tools Create Guid](../../assets/images/devguide/tutorials/createguid.png)
 
-    Remember to remove '{' and '}' 
+    Remember to remove '{' and '}' from beginning and end of string
 
 ## Add reference to _Atlas.DisplayAPI_ NuGet package
 
-Manage NuGet packages of project:
+Manage NuGet packages of project
 
 ![Manage NuGet Packages](../../assets/images/devguide/tutorials/managenugetpackages.png)
 
-Browse to Atlas.DisplayAPI NuGet package and install:
+Browse to _Atlas.DisplayAPI_ NuGet package and install
 
-![Manage Package](../../assets/images/devguide/tutorials/nugetpackage.png)
+![Add Nuget Package](../../assets/images/devguide/tutorials/nugetpackage.png)
 
-Once installed the references will be:
+Once installed the references should look similar to this
 
-![Manage Package](../../assets/images/devguide/tutorials/references.png)
+![References](../../assets/images/devguide/tutorials/references.png)
 
 ## Add an icon for the toolbar
 
-Add _Resources_ folder to project:
+Add a _Resources_ folder to the project
 
 ![Add Resources Folder](../../assets/images/devguide/tutorials/addresourcesfolder.png)
 
-Which should look like:
+Which should look like
 
 ![Resources Folder](../../assets/images/devguide/tutorials/resourcesfolder.png)
 
-Add existing item to Resources folder:
+Add an existing item to the Resources folder
 
 ![Resources Folder](../../assets/images/devguide/tutorials/addiconasexistingitem.png)
 
 !!! note
 
-    Icon should be a suitable 16 x 16 pixel PNG file compatible with ATLAS dark theme
+    The icon should be a 16 x 16 pixel PNG file compatible with ATLAS dark theme
 
-
-Select and _Add_ icon:
+Select and _Add_ icon
 
 ![Resources Folder](../../assets/images/devguide/tutorials/selectandaddicon.png)
 
-Which should look like:
+Which should look like
 
 ![Resources Folder](../../assets/images/devguide/tutorials/icon.png)
 
-Ensure _Build Action_ is set to _Resource_:
+Ensure _Build Action_ is set to _Resource_
 
 ![Resources Folder](../../assets/images/devguide/tutorials/iconproperties.png)
 
-## Configure _View) class
+## Configure _View_ class
 
-The _View_ provides the custom visualization presentation. 
+The _View_ class presents the custom visualization. 
 
 - Rename `UserControl1` to `SampleDisplayView`
     - Rename `UserControl1.xaml` to `SampleDisplayView.xaml`
@@ -116,7 +125,7 @@ The _View_ provides the custom visualization presentation.
     - Rename `UserControl1.xaml.cs` to `SampleDisplayView.xaml.cs`
         - Rename `UserControl1` class to `SampleDisplayView`
 
-    ```c#
+    ```c# hl_lines="3 5"
     namespace SampleDisplayPlugin
     {
         public partial class SampleDisplayView
@@ -129,7 +138,7 @@ The _View_ provides the custom visualization presentation.
     }
     ```
 
-- Add a simple `<TextBlock>` to display white text to the _XAML_
+- Add to the _XAML_ a simple `<TextBlock>` to display white text
 
     ```xml hl_lines="9-13"
     <UserControl x:Class="SampleDisplayPlugin.SampleDisplayView"
@@ -151,23 +160,23 @@ The _View_ provides the custom visualization presentation.
 
 !!! note
 
-    Text is white to be compatible with ATLAS dark theme
+    Text is white to be compatible with the ATLAS dark theme
 
 ## Add _View Model_ class
 
-The _ViewModel_ provides the business logic behind the custom visualization. 
+The _View Model_ class provides the business logic behind the custom visualization. 
 
-Add _New Item_ to project:
+Add a _New Item_ to the project
 
 ![Add New Item](../../assets/images/devguide/tutorials/addnewitem.png)
 
-Add a _Class_ named _SampleDisplayViewModel_to project:
+Add a _Class_ named _SampleDisplayViewModel_ to the project
 
 ![Add Class](../../assets/images/devguide/tutorials/addviewmodelclass.png)
 
 !!! important
 
-    Remember to derive the _ViewModel_ from _DisplayPluginViewModel_ otherwise the custom display will not be available to ATLAS  
+    Remember to derive the _View Model_ class from the _DisplayPluginViewModel_ base class, otherwise the custom display will not be available to ATLAS  
 
 ```c# hl_lines="5"
 using MAT.Atlas.Client.Presentation.Displays;
@@ -182,14 +191,14 @@ namespace SampleDisplayPlugin
 
 !!! note
 
-    Subsequent tutorials will expand the _ViewModel_ class to interact with the _View_ and retrieve data from ATLAS to visualize.
+    Subsequent tutorials will expand the _View Model_ class to interact with the _View_ and retrieve data from ATLAS to visualize.
 
 ## Add _Plugin_ class
 
-The _Plugin_ class registers the _View_ class, _ViewModel_ class and _Icon_ location with ATLAS.
+The _Plugin_ class registers the _View_ class, _View Model_ class and _Icon_ location with ATLAS.
 
-- Create a class named _Plugin_ as per [View Model class](#add-viewmodel-class)
-    - Derive from _DisplayPlugin<Plugin>_
+- Create a class named _Plugin_ as per [View Model class](#add-view-model-class)
+    - Derive from _DisplayPlugin&lt;Plugin&gt;_
 - Decorate class with _DisplayPlugin_ attribute
     - Set appropriate values for: _View_, _ViewModel_ and _IconUrl_ properties
 
@@ -212,10 +221,13 @@ namespace SampleDisplayPlugin
 
 The _PluginModule_ class provides the entry point for ATLAS to initialise the custom display plugin.
 
-- Create a class named _PluginModule_ as per [View Model class](#add-viewmodel-class)
+- Create a class named _PluginModule_ as per [View Model class](#add-view-model-class)
     - Derive from _Module_ (provided by _Autofac_)
 - Decorate class with _Export_ attribute (provided by _MEF_)
-    - Add a reference to _System.ComponentModel.Composition_ as required
+    - Add a reference to _System.ComponentModel.Composition_ if required
+
+    ![Project References](../../assets/images/devguide/tutorials/mefreference.png)
+
 - Override _Load_ method and register display plugin 
 
 ```c# hl_lines="10-11 13 15"
@@ -239,9 +251,9 @@ namespace SampleDisplayPlugin
 }
 ```
 
-## Optional: combine _PluginModule_ and _Plugin_ class
+## Optional: combine _PluginModule_ and _Plugin_ classes
 
-To reduce boilerplate code the _plugin_ class may be nested within the _PluginModule_ class as desired
+To reduce boilerplate code the _plugin_ class may be nested within the _PluginModule_ class
 
 ```c# hl_lines="13-23"
 using System.ComponentModel.Composition;
@@ -274,17 +286,22 @@ namespace SampleDisplayPlugin
 
 ## Build, Deploy and Debug
 
-- Build _Debug_ or _Release_ configuration
+- Build _Debug_ or _Release_ solution configuration
 - Copy plugin DLL to ATLAS 10 program files
-    - Manually copy from bin/Debug or bin/Release
-    - Add a post build step to automatically copy, see [Deployment](#deployment-script)
-- Debug using ATLAS 10
+    - Manually copy from bin/Debug or bin/Release, or
+    - Add a post build step to automatically copy, see [Deployment Script](deploymentscript.md)
+- Debug using ATLAS 10 (updating the project settings to start ATLAS on debugging)
 
     ![Debug Project Settings](../../assets/images/devguide/tutorials/debugprojectsettings.png)
 
-- Assuming all went well, you should see an icon for your custom display and upon clicking
+- Assuming all went well, there should be a toolbar icon for the custom display in ATLAS
 
+    ![Icon](../../assets/images/devguide/tutorials/icontooltip.png)
 
+- Clicking the custom display toolbar icon should display a window containing the contents of the _View_
 
-## Deployment Script
+    ![Display Window](../../assets/images/devguide/tutorials/customdisplaywindow.png)
 
+!!! note
+
+    The code for this tutorial can be reviewed at [Tutorials/SampleDisplayPlugin](https://github.com/mat-docs/Atlas.DisplayAPI.Examples/tree/master/SampleDisplayPlugin)
