@@ -531,7 +531,7 @@ protected override Task OnMakeTimebaseDataRequestsAsync(ICompositeSession compos
 
 !!! note
 
-    The `Trace` needs a `SampleMode` of `MaximumToMinimum` to render correctly.
+    The `Trace` class needs a `SampleMode` of `MaximumToMinimum` in order to render correctly.
 
 !!! note
 

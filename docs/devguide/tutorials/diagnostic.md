@@ -8,7 +8,7 @@ A useful way to explore the [features](../../introduction/features.md) of the Di
 
 With the ability to log messages, we can start to explore the API by overriding each of the _View Model_ virtual methods and then experiment with the display in ATLAS to see when and in what situations these overridden methods are called.
 
-For other state, methods and services we can explore these by adding additional user interface elements to the _View_ to view the results and any side effects of interacting with them.
+For state, methods and services we can explore these by adding additional user interface elements to the _View_ to view the results and any side effects of interacting with them.
 
 Start the tutorial by [creating a new display from scratch](createfromscratch.md) named `EnhancedDisplayPlugin`.
 

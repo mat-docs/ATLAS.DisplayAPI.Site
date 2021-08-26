@@ -35,7 +35,7 @@ The display plugin library provides base and utility classes that reduce the ove
 - `TParameterViewModel` must be a class derived from `ParameterSampleViewModelBase`
 - `ParameterSampleViewModelBase` base class wraps a display parameter
     - Properties of the display parameter such as `Name` and current `Value`
-    - `OnUpdate` and `OnValueChanged()` notification methods to override
+    - `OnUpdate()` and `OnValueChanged()` notification methods to override
 - An implementation of the `OnCreateParameterViewModel()` factory method must be provided to supply a `TParameterViewModel` instance for a display parameter on demand
 - When display parameters are added/removed from the display, the `Parameters` collection is updated
     - `OnCreateParameterViewModel()` is called for newly added display parameters
@@ -47,7 +47,7 @@ The display plugin library provides base and utility classes that reduce the ove
 The `OperationTracker<TOperation>` class provides support for flow control and throttling of operations such as data or redraw requests
 
 - Pass to the _Constructor_ a 'throttle interval' and 'action' to execute an operation 
-    - The 'throttle interval' specifies the minimum time between operations being executed
+    - The 'throttle interval' specifies the minimum time (as a `TimeSpan`) between operations being executed
     - The 'action' is passed an instance of `TOperation` and when finished must call `Complete()`
 - Up to two operations can be tracked at any one time
     - The current (or active) operation (will be the first one added)
