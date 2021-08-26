@@ -2,6 +2,10 @@
 
 The following steps demonstrate how to create a custom display plugin from scratch.
 
+!!! note
+
+    The code for this tutorial can be reviewed at [Tutorials/SampleDisplayPlugin](https://github.com/mat-docs/Atlas.DisplayAPI.Examples/tree/master/SampleDisplayPlugin)
+
 A custom display plugin is a .Net DLL that when deployed to the ATLAS program files, is automatically loaded and registered on startup.
 
 !!! note
@@ -69,7 +73,7 @@ The _Description_ property corresponds to the custom display icon tooltip
 
     ![Tools Create Guid](../../assets/images/devguide/tutorials/createguid.png)
 
-    Remember to remove '{' and '}' from beginning and end of string
+    Remember to remove '{' and '}' from beginning and end of the string
 
 ## Add reference to _Atlas.DisplayAPI_ NuGet package
 
@@ -183,7 +187,7 @@ using MAT.Atlas.Client.Presentation.Displays;
 
 namespace SampleDisplayPlugin
 {
-    public class SampleDisplayViewModel : DisplayPluginViewModel
+    public sealed class SampleDisplayViewModel : DisplayPluginViewModel
     {
     }
 }
@@ -211,7 +215,7 @@ namespace SampleDisplayPlugin
         View = typeof(SampleDisplayView),
         ViewModel = typeof(SampleDisplayViewModel),
         IconUri = "Resources/icon.png")]
-    public class Plugin : DisplayPlugin<Plugin>
+    public sealed class Plugin : DisplayPlugin<Plugin>
     {
     }
 }
@@ -241,7 +245,7 @@ using MAT.Atlas.Client.Presentation.Plugins;
 namespace SampleDisplayPlugin
 {
     [Export(typeof(IModule))]
-    public class PluginModule : Module
+    public sealed class PluginModule : Module
     {
         protected override void Load(ContainerBuilder builder)
         {
@@ -266,7 +270,7 @@ using MAT.Atlas.Client.Presentation.Plugins;
 namespace SampleDisplayPlugin
 {
     [Export(typeof(IModule))]
-    public class PluginModule : Module
+    public sealed class PluginModule : Module
     {
         protected override void Load(ContainerBuilder builder)
         {
@@ -277,7 +281,7 @@ namespace SampleDisplayPlugin
             View = typeof(SampleDisplayView),
             ViewModel = typeof(SampleDisplayViewModel),
             IconUri = "Resources/icon.png")]
-        private class Plugin : DisplayPlugin<Plugin>
+        private sealed class Plugin : DisplayPlugin<Plugin>
         {
         }
     }
@@ -301,7 +305,3 @@ namespace SampleDisplayPlugin
 - Clicking the custom display toolbar icon should display a window containing the contents of the _View_
 
     ![Display Window](../../assets/images/devguide/tutorials/customdisplaywindow.png)
-
-!!! note
-
-    The code for this tutorial can be reviewed at [Tutorials/SampleDisplayPlugin](https://github.com/mat-docs/Atlas.DisplayAPI.Examples/tree/master/SampleDisplayPlugin)
