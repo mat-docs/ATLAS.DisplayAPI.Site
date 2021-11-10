@@ -3,7 +3,7 @@ site_description: 'Creating custom displays for McLaren ATLAS'
 docs_dir: 'docs'
 repo_url: https://github.com/mat-docs/ATLAS.DisplayAPI.Site
 edit_uri: edit/main/docs/
-site_url: https://docs.atlas.mclarenapplied.com/developer/atlas-displayapi/
+site_url: https://atlas.mclarenapplied.com/developer/atlas-displayapi/
 
 theme:
   name: 'material'
@@ -23,7 +23,7 @@ theme:
 copyright: Copyright &copy; 2021 McLaren Applied Ltd.
 
 nav:
-  - ⇱ Docs Portal: https://docs.atlas.mclarenapplied.com/
+  - ⇱ Docs Portal: https://atlas.mclarenapplied.com/
   - Introduction:
     - Overview: index.md
     - Further Information:
